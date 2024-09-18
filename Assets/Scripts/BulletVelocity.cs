@@ -18,4 +18,24 @@ public class BulletVelocity : MonoBehaviour
     {
         rb.velocity = transform.forward * bulletSpeed;
     }
+    private void OnTriggerEnter(Collider other)
+    {
+       if (other.gameObject.CompareTag("Player"))
+        {
+            //Kendu bizitza playerrari
+            Destroy(gameObject);
+        }
+
+       if (other.gameObject.CompareTag("Enemy"))
+        {
+            Destroy(gameObject);
+            Destroy(other.gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
+    }
+
 }
