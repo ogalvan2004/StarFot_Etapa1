@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-public class Pickup : MonoBehaviour
+public class BizitzaPickup : MonoBehaviour
 {
     public float speed;
     private bool isActivated;
 
+    public float healAmount;
     private void Update()
     {
         if (!isActivated)
@@ -23,6 +24,10 @@ public class Pickup : MonoBehaviour
         {
             //JOKU LOGIKA GEHITU
             //PUNTUAK, BIZITZA, BOOST, AMAMENTU AKTIBAZIO TENPORALA, EZKUTUA
+            GameManager.Instance.GetComponent<HealthManager>().GainHealth(healAmount);
+            gameObject.GetComponent<Collider>().enabled = false;
+            isActivated = true;
+            transform.parent = other.transform.parent;
 
             isActivated = true;
             transform.parent = other.transform.parent;

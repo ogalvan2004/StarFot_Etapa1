@@ -112,14 +112,15 @@ public class Movement : MonoBehaviour
 
     void Boost(bool state)
     {
-        /*if (state)
+        if(state)
         {
-            trailParticles.Play();
+            cameraParent.GetComponentInChildren<CinemachineImpulseSource>().GenerateImpulse();
+            //trailParticles.Play();
         }
         else
         {
-            trailParticles.Stop();
-        }*/
+            //trailParticles.Stop();
+        }
         trailParticles.emitting = state;
         trailParticles2.emitting = state;
 

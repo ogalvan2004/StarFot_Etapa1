@@ -83,8 +83,12 @@ public class Shooting : MonoBehaviour
     {
         for(int i = 0; i < targetList.Count; i++)
         {
-            GameObject newMissile = Instantiate(missile, missileOrigin.position, Quaternion.identity);
-            newMissile.GetComponent<HomingMisslle>().Target = targetList[i].transform;
+            if (targetList[1] != null)
+            {
+                 GameObject newMissile = Instantiate(missile, missileOrigin.position, Quaternion.identity);
+                 newMissile.GetComponent<HomingMisslle>().Target = targetList[i].transform;
+            }
+           
         }
         targetList.Clear(); 
     }

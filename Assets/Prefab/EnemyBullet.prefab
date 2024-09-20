@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1303093118489895432}
   - component: {fileID: 6625425287790969574}
   - component: {fileID: 4907740605700250583}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EnemyBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32,7 +32,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.04, z: 1.21}
-  m_LocalScale: {x: 0.04466628, y: 0.1666818, z: 0.17204937}
+  m_LocalScale: {x: 0.35634688, y: 0.35994932, z: 0.34067497}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

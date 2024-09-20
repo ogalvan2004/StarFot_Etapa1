@@ -20,11 +20,16 @@ public class BulletVelocity : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
+        bool check = false;
+
        if (other.gameObject.CompareTag("Player"))
         {
             //Kendu bizitza playerrari
+            GameManager.Instance.GetComponent<HealthManager>().LoseHealth(10);
             Destroy(gameObject);
+            check = true;
         }
+        Destroy(gameObject);
 
        if (other.gameObject.CompareTag("Enemy"))
         {

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -7,6 +8,8 @@ public class HomingMisslle : MonoBehaviour
 {
     [SerializeField]
     Rigidbody rb;
+    [SerializeField]
+    GameObject explosion;
 
 
     public float missileSpeed;
@@ -32,6 +35,22 @@ public class HomingMisslle : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+      if (other.gameObject.CompareTag("Player"))
+        {
+            //Kendu bizitza playerrari
+            Destroy(gameObject);
+        }
+      else if (other.gameObject.CompareTag("Enemy"))
+        {
+            Instantiate(explosion, other.gameObject.transform.position, Quaternion.identity);
+            Destroy(other.gameObject);
+            Destroy(gameObject);
+        }
+      else
+        {
+            Destroy(gameObject);
+        }
+
         
     }
 
